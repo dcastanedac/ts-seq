@@ -1,48 +1,88 @@
-# From cyst to tapeworm: Transcriptome analysis with R of *Taenia solium in-vitro* activation
-The following repository contains the scripts used to validate and analyze *Taenia solium* transcriptome. These can be used as an starting point to explore the data and for hypothesis making.
-The pipeline consists on the use of clustering analysis for validation of experimental groups, and filtering and visualization of differentially expressed genes (DEGs).
-In addition, we generated an annotation package that can be used for over representation analysis (ORA) of functional categories in the dataset.
+# **From Cyst to Tapeworm: Transcriptome Analysis of *Taenia solium* *In Vitro* Activation with R**  
 
-## Software and Packages used:
-- R version 4.4.2
-  - tidyverse: for data cleaning, manipulation (dplyr) and visualization (ggplot2)
-  - DESeq2: for differential gene expression (DGE) analysis
-  - tidyplots: for data visualization
-  - eulerr: for visualization of DEGs across experimental conditions
-  - annotationForge and annotationDbi: to generate an annotation package based on the data obtained with OmicsBox.
-  - clusterProfiler: for ORA with Gene Set Enrichment Analysis (GSEA)
-- RStudio 2024.12.0 Build 467
-- OmicsBox version 3.3.2
+This repository contains the scripts used for validating and analyzing the *Taenia solium* transcriptome. The workflow serves as a starting point for data exploration and hypothesis generation.  
 
-## Samples and Conditions Description:
-Each sample was labeled according to each individual's category and their treatment. **AT** and **SAT** makes reference to **+TA** and **-TA** respectively.
-- **NC** makes reference to **non-cultured** cysts.
-- **PRE_SAT** makes reference to **non-evaginated individuals cultured for 6h** in RPMI medium **-TA**. 
-- **PRE_AT** makes reference to **non-evaginated individuals cultured for 6h** in RPMI medium **+TA**.
-- **EV_SAT** makes reference to **recently evaginated indiviuals** (around the 12-24h range) in RPMI medium **-TA**. 
-- **EV_AT** makes reference to **recently evaginated individuals** (around 12-24h range) in RPMI medium **+TA**.
-- **POST_SAT** makes reference to **evaginated indiviuals kept in culture for 120h** in RPMI medium **-TA**. 
-- **POST_AT** makes reference to **evaginated individuals kept in culture for 120h** in RPMI medium **+TA**.
+The pipeline includes:  
+1. **Clustering analysis** for validating experimental groups.  
+2. **Filtering and visualization** of differentially expressed genes (DEGs).  
+3. **Functional annotation** using an annotation package for **Over-Representation Analysis (ORA)** of functional categories.  
 
-## Scripts usage:
-### For Technical Validation and Basic Data Exploration:
-- **DGE_PCA_hierarchical_clustering.R:** Performs DGE analysis, PCA, and hierarchical clustering to validate and explore structure across replicates for each experimental conditions.
-- **euler_plots.R:** Generates Euler diagrams to visualize comparisons of DEGs across each experimental condition, particularly -TA and +TA.
+---
 
-### As an example of further analysis for EV vs PRE (+TA):
-- **volcano_plots.R:** Creates volcano plots for visualizing DGE results and to identify possible interesting genes.
-- **blast2go_annotation.R:** Creates and install an annotation object of the data obtained from OmicsBox with assigned Gene Ontology (GO) terms for each gene.
-- **gene_set_enrichment.R:** Performs GSEA using the previously created annotation object for all the GO terms belonging to the Biological Process (BP) ontology.
+## **Software and Dependencies**  
 
-## GO Annotations and Annotations Package Folders:
-The GO Annotations folder contain the following files:
-- **GO_annotations.txt** is a text file obtained from OmicsBox used in the **blast2go_annotation.R** script to create an annotation object.
-- **OmicsBoxProj_tsolium-annotation_details.pdf** is a file with details of the annotation project from the OmicsBox suite.
-- **Tsolium_annotation_full-export.xlsx** is a spreadsheet containing the full results of the annotation in the OmicsBox suite.
+This analysis was conducted using:  
 
-The Annotations Package folder contain the files created by annotationForge, and can be used to install the annotation package used in this project.
-Use the following code:
->> *install.packages("org.Tsolium.eg.db", repos = NULL, type = "source")*
+### **R and Packages**  
+- **R version 4.4.2**  
+  - `tidyverse`: Data manipulation (`dplyr`) and visualization (`ggplot2`).  
+  - `DESeq2`: Differential gene expression (DGE) analysis.  
+  - `tidyplots`: Custom visualization.  
+  - `eulerr`: Visualization of DEGs across experimental conditions.  
+  - `annotationForge` and `AnnotationDbi`: Creation of a custom annotation package from OmicsBox data.  
+  - `clusterProfiler`: ORA and Gene Set Enrichment Analysis (GSEA).  
 
-## Contact Information:
-Be free to contact David Castañeda to the following email in case of any question or concern: *david.castaneda.c@upch.pe*
+### **Additional Software**  
+- **RStudio 2024.12.0 Build 467**  
+- **OmicsBox 3.3.2**  
+
+---
+
+## **Experimental Samples and Conditions**  
+
+Each sample is labeled based on the biological stage and treatment condition:  
+
+- **AT** = *+TA* (With Taurocholic Acid)  
+- **SAT** = *-TA* (Without Taurocholic Acid)  
+
+| Label       | Description |
+|-------------|------------------------------------------------------------|
+| **NC**       | Non-cultured cysts |
+| **PRE_SAT**  | *Non-evaginated* cysts cultured for 6h in RPMI *-TA* |
+| **PRE_AT**   | *Non-evaginated* cysts cultured for 6h in RPMI *+TA* |
+| **EV_SAT**   | *Recently evaginated* individuals (12-24h) in RPMI *-TA* |
+| **EV_AT**    | *Recently evaginated* individuals (12-24h) in RPMI *+TA* |
+| **POST_SAT** | *Evaginated* individuals cultured for 120h in RPMI *-TA* |
+| **POST_AT**  | *Evaginated* individuals cultured for 120h in RPMI *+TA* |
+
+---
+
+## **Usage: Scripts Overview**  
+
+### **1. Technical Validation and Data Exploration**  
+- **`DGE_PCA_hierarchical_clustering.R`**  
+  - Performs **DGE analysis**, **PCA**, and **hierarchical clustering** to validate sample groups.  
+- **`euler_plots.R`**  
+  - Generates **Euler diagrams** to compare DEGs across experimental conditions (*e.g.,* -TA vs. +TA).  
+
+### **2. Further Analysis Example: EV vs PRE (+TA)**  
+- **`volcano_plots.R`**  
+  - Creates **volcano plots** to visualize DEGs and identify potential candidates.  
+- **`blast2go_annotation.R`**  
+  - Converts OmicsBox output into a functional annotation **R package** with **GO terms**.  
+- **`gene_set_enrichment.R`**  
+  - Runs **GSEA** on the Biological Process (BP) ontology using the annotation package.  
+
+---
+
+## **GO Annotations and Annotation Package**  
+
+### **GO Annotations Folder** (`GO_annotations/`)  
+Contains the functional annotation data exported from OmicsBox:  
+- **`GO_annotations.txt`** → Used in `blast2go_annotation.R` to create an annotation object.  
+- **`OmicsBoxProj_tsolium-annotation_details.pdf`** → OmicsBox annotation project details.  
+- **`Tsolium_annotation_full-export.xlsx`** → Full annotation results from OmicsBox.  
+
+### **Annotation Package Folder** (`annotation_package/`)  
+Includes files generated by `annotationForge`, which can be used to install the custom annotation package.  
+
+To install:  
+```r
+install.packages("org.Tsolium.eg.db", repos = NULL, type = "source")
+
+---
+
+## **Contact:**
+
+For questions or issues, feel free to contact:
+📧 David Castañeda – david.castaneda.c@upch.pe
