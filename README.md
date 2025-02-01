@@ -80,6 +80,11 @@ To install:
 ```r
 install.packages("org.Tsolium.eg.db", repos = NULL, type = "source")
 ```
+### **Data Folder** (`Data/`)
+Contains the counts matrix and the DESeq2 object used in the analysis:  
+- **`counts.RData`** → Matrix of raw counts per gene, used as input for **DESeq2**.  
+- **`dds.RData`** → The **dds object** after **normalization and transformation** in DESeq2.
+  
 ---
 
 ## **Contact:**
