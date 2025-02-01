@@ -1,5 +1,4 @@
 # From cyst to tapeworm: Transcriptome analysis with R of *Taenia solium in-vitro* activation
-
 The following repository contains the scripts used to validate and analyze *Taenia solium* transcriptome. These can be used as an starting point to explore the data and for hypothesis making.
 The pipeline consists on the use of clustering analysis for validation of experimental groups, and filtering and visualization of differentially expressed genes (DEGs).
 In addition, we generated an annotation package that can be used for over representation analysis (ORA) of functional categories in the dataset.
@@ -36,4 +35,14 @@ Each sample was labeled according to each individual's category and their treatm
 - **gene_set_enrichment.R:** Performs GSEA using the previously created annotation object for all the GO terms belonging to the Biological Process (BP) ontology.
 
 ## GO Annotations and Annotations Package Folders:
-The GO Annotations folder
+The GO Annotations folder contain the following files:
+- **GO_annotations.txt** is a text file obtained from OmicsBox used in the **blast2go_annotation.R** script to create an annotation object.
+- **OmicsBoxProj_tsolium-annotation_details.pdf** is a file with details of the annotation project from the OmicsBox suite.
+- **Tsolium_annotation_full-export.xlsx** is a spreadsheet containing the full results of the annotation in the OmicsBox suite.
+
+The Annotations Package folder contain the files created by annotationForge, and can be used to install the annotation package used in this project.
+Use the following code:
+>> *install.packages("org.Tsolium.eg.db", repos = NULL, type = "source")*
+
+## Contact Information:
+Be free to contact David Castañeda to the following email in case of any question or concern: *david.castaneda.c@upch.pe*
