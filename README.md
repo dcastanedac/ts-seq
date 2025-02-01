@@ -85,4 +85,5 @@ install.packages("org.Tsolium.eg.db", repos = NULL, type = "source")
 ## **Contact:**
 
 For questions or issues, feel free to contact:
-📧 David Castañeda – david.castaneda.c@upch.pe
+
+- 📧 David Castañeda – david.castaneda.c@upch.pe
