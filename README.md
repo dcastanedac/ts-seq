@@ -20,9 +20,12 @@ This analysis was conducted using:
   - `tidyplots`: Custom visualization.  
   - `eulerr`: Visualization of DEGs across experimental conditions.  
   - `annotationForge` and `AnnotationDbi`: Creation of a custom annotation package from OmicsBox data.  
-  - `clusterProfiler`: ORA and Gene Set Enrichment Analysis (GSEA).  
+  - `clusterProfiler`: ORA and Gene Set Enrichment Analysis (GSEA).
+  - `Rsubread`: Mapping to reference genome.
+  - `GenomicFeatures`: Generating a TxDb object and counts matrix. 
 
 ### **Additional Software**  
+- **FastQC 0.12.0 and multiQC**
 - **RStudio 2024.12.0 Build 467**  
 - **OmicsBox 3.3.2**  
 
@@ -49,7 +52,14 @@ Each sample is labeled based on the biological stage and treatment condition:
 
 ## **Usage: Scripts Overview**  
 
-### **1. Technical Validation and Data Exploration**  
+### **1. Quality Control, Trimming, Read Mapping and Count Matrix**  
+- **`QC_trimming.sh`**  
+  - Performs **Quality Control** and **Trimming** of adapters. Must be ran on terminal.  
+- **`read_mapping_count_matrix.R`**  
+  - Maps reads to *Taenia solium* reference genome (https://parasite.wormbase.org/Taenia_solium_prjna170813/Info/Index/).
+  - Generates the count matrix for DGE analysis.  
+
+### **2. Technical Validation and Data Exploration**  
 - **`DGE_PCA_hierarchical_clustering.R`**  
   - Performs **DGE analysis**, **PCA**, and **hierarchical clustering** to validate sample groups.  
 - **`euler_plots.R`**  
