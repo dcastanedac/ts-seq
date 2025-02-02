@@ -3,9 +3,10 @@
 This repository contains the scripts used for validating and analyzing the *Taenia solium* transcriptome. The workflow serves as a starting point for data exploration and hypothesis generation.  
 
 The pipeline includes:  
-1. **Clustering analysis** for validating experimental groups.  
-2. **Filtering and visualization** of differentially expressed genes (DEGs).  
-3. **Functional annotation** using an annotation package for **Over-Representation Analysis (ORA)** of functional categories.  
+1. **QC, trimming, read mapping and counts matrix generation** for validating read quality, mapping to *T. solium* reference genome and generating a count matrix.
+2. **Clustering analysis** for validating experimental groups.  
+3. **Filtering and visualization** of differentially expressed genes (DEGs).  
+4. **Functional annotation** using an annotation package for **Over-Representation Analysis (ORA)** of functional categories.  
 
 ---
 
