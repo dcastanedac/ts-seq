@@ -92,3 +92,5 @@ Contains the counts matrix and the DESeq2 object used in the analysis:
 For questions or issues, feel free to contact:
 
 - 📧 David Castañeda – david.castaneda.c@upch.pe
+- 📧 Segundo Del Águila – segundo.del.aguila.s@upch.pe
+- 📧 Renzo Gútierrez – renzo.gutierrez@upch.pe
