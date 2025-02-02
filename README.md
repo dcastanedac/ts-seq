@@ -1,4 +1,4 @@
-# **From Cyst to Tapeworm: Transcriptome Analysis of *Taenia solium* *In Vitro* Activation with R**  
+# **From Cyst to Tapeworm: Transcriptome Analysis of *Taenia solium* *In Vitro* Activation**  
 
 This repository contains the scripts used for validating and analyzing the *Taenia solium* transcriptome. The workflow serves as a starting point for data exploration and hypothesis generation.  
 
