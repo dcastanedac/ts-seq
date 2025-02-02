@@ -22,18 +22,8 @@ multiqc .
 
 ##### Trim both adapters (since we are uncertain of the adapters used)
 # Replace '/home/user/Documents/wd' with your actual working directory in the code below
-# For TruSeq adapters, the adapter sequences are:
-# AGATCGGAAGAGCACACGTCTGAACTCCAGTCA,AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
 # But since Nextera adapters are suspected, run trimming for those instead
 mkdir /home/user/Documents/wd/trimmed_data_illu
-
-# Trim Nextera adapters from the raw fastq files
-for i in `ls -1 /home/user/Documents/wd/data/*_ME_L001_R1_001.fastq.gz`; \
-    do dname=$(dirname ${i}); name=$(basename ${i} _ME_L001_R1_001.fastq.gz); \
-    bbduk.sh -Xmx100g in1=${dname}/${name}_ME_L001_R1_001.fastq.gz in2=${dname}/${name}_ME_L001_R2_001.fastq.gz \
-    out1=/home/user/Documents/wd/trimmed_data_illu/${name}_trimmed_1.fq.gz out2=/home/user/Documents/wd/trimmed_data_illu/${name}_trimmed_2.fq.gz \
-    qin=33 literal=AGATCGGAAGAGCACACGTCTGAACTCCAGTCA,AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT restrictright=34 rcomp=f k=23 mink=11 ktrim=r hdist=1 hdist2=0 qtrim=rl trimq=20 maq=20 minlen=25 >> QC/trim_log_illu 2>&1 ;
-done
 
 # Nextera adapter sequences (CTGTCTCTTATACACATCT, AGATGTGTATAAGAGACAG) will be trimmed in the next section
 mkdir /home/user/Documents/wd/trimmed_data
@@ -45,8 +35,6 @@ for i in `ls -1 /home/user/Documents/wd/data/*_ME_L001_R1_001.fastq.gz`; \
     out1=/home/user/Documents/wd/trimmed_data/${name}_trimmed_1.fq.gz out2=/home/user/Documents/wd/trimmed_data/${name}_trimmed_2.fq.gz \
     qin=33 literal=CTGTCTCTTATACACATCT,AGATGTGTATAAGAGACAG restrictright=20 rcomp=f k=19 mink=8 ktrim=r hdist=1 hdist2=0 qtrim=rl trimq=20 maq=20 minlen=25 >> QC/trim_log 2>&1 ; 
 done
-
-##### After trimming, reads had Nextera adapter contamination, so we will work with the trimmed reads
 
 ##### Perform quality control (QC) on the trimmed data
 # Replace '/home/user/Documents/wd' with your actual working directory in the code below
