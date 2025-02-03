@@ -64,7 +64,9 @@ Each sample is labeled based on the biological stage and treatment condition:
 - **`DGE_PCA_hierarchical_clustering.R`**  
   - Performs **DGE analysis**, **PCA**, and **hierarchical clustering** to validate sample groups.  
 - **`euler_plots.R`**  
-  - Generates **Euler diagrams** to compare DEGs across experimental conditions (*e.g.,* -TA vs. +TA).  
+  - Generates **Euler diagrams** to compare DEGs across experimental conditions (*e.g.,* -TA vs. +TA).
+- **`MA_plot.R`**
+  - Generates **MA plots** to visualize log-fold change vs mean expression between two groups.    
 
 ### **2. Further Analysis Example: EV vs PRE (+TA)**  
 - **`volcano_plots.R`**  
@@ -95,6 +97,7 @@ install.packages("org.Tsolium.eg.db", repos = NULL, type = "source")
 Contains the counts matrix and the DESeq2 object used in the analysis:  
 - **`counts.RData`** → Matrix of raw counts per gene, used as input for **DESeq2**.  
 - **`dds.RData`** → The **dds object** after **normalization and transformation** in DESeq2.
+- **`table_reads_summary.xlsx`** → A summary table of read mapping and qc.
   
 ---
 
