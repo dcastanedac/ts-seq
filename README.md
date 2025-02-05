@@ -36,8 +36,8 @@ This analysis was conducted using:
 
 Each sample is labeled based on the biological stage and treatment condition:  
 
-- **AT** = *+TA* (With Taurocholic Acid)  
-- **SAT** = *-TA* (Without Taurocholic Acid)  
+- **AT** = *TA+* (With Taurocholic Acid)  
+- **SAT** = *TA-* (Without Taurocholic Acid)  
 
 | Label in code | Sample name | Description |
 |--------------|------------|-------------|
