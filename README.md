@@ -103,7 +103,7 @@ Contains the counts matrix and the DESeq2 object used in the analysis:
 
 ## **Pipeline Contributions**:
 Segundo Del Águila performed QC, trimming, read mapping and generation of a counts matrix.
-Segundo Del Águila, Renzo Gútierrez and David Castañeda performed DGE analysis, technical validation of samples and initial data exploration.
+Segundo Del Águila, Renzo Gutierrez and David Castañeda performed DGE analysis, technical validation of samples and initial data exploration.
 David Castañeda performed gene annotation.
 David Castañeda and Renzo Gútierrez performed ORA of functional categories.
 
@@ -115,4 +115,4 @@ For questions or issues, feel free to contact:
 
 - 📧 David Castañeda – david.castaneda.c@upch.pe
 - 📧 Segundo Del Águila – segundo.del.aguila.s@upch.pe
-- 📧 Renzo Gútierrez – renzo.gutierrez@upch.pe
+- 📧 Renzo Gutierrez – renzo.gutierrez@upch.pe
