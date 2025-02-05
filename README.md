@@ -10,6 +10,16 @@ The pipeline includes:
 
 ---
 
+## **Data**
+
+### **Data Folder** (`Data/`)
+Contains the counts matrix and the DESeq2 object used in the analysis:  
+- **`counts.RData`** → Matrix of raw counts per gene, used as input for **DESeq2**.  
+- **`dds.RData`** → The **dds object** after **normalization and transformation** in DESeq2.
+- **`table_reads_summary.xlsx`** → A summary table of read mapping and qc.
+
+---
+
 ## **Software and Dependencies**  
 
 This analysis was conducted using:  
@@ -93,12 +103,7 @@ To install:
 ```r
 install.packages("org.Tsolium.eg.db", repos = NULL, type = "source")
 ```
-### **Data Folder** (`Data/`)
-Contains the counts matrix and the DESeq2 object used in the analysis:  
-- **`counts.RData`** → Matrix of raw counts per gene, used as input for **DESeq2**.  
-- **`dds.RData`** → The **dds object** after **normalization and transformation** in DESeq2.
-- **`table_reads_summary.xlsx`** → A summary table of read mapping and qc.
-  
+ 
 ---
 
 ## **Pipeline Contributions**:
