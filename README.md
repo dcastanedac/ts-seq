@@ -39,15 +39,15 @@ Each sample is labeled based on the biological stage and treatment condition:
 - **AT** = *+TA* (With Taurocholic Acid)  
 - **SAT** = *-TA* (Without Taurocholic Acid)  
 
-| Label       | Description |
-|-------------|------------------------------------------------------------|
-| **NC**       | Non-cultured cysts |
-| **PRE_SAT**  | *Non-evaginated* cysts cultured for 6h in RPMI *-TA* |
-| **PRE_AT**   | *Non-evaginated* cysts cultured for 6h in RPMI *+TA* |
-| **EV_SAT**   | *Recently evaginated* individuals (12-24h) in RPMI *-TA* |
-| **EV_AT**    | *Recently evaginated* individuals (12-24h) in RPMI *+TA* |
-| **POST_SAT** | *Evaginated* individuals cultured for 120h in RPMI *-TA* |
-| **POST_AT**  | *Evaginated* individuals cultured for 120h in RPMI *+TA* |
+| Label in code | Sample name | Description |
+|--------------|------------|-------------|
+| **NC** | NC | Non-cultured cysts |
+| **PRE_SAT** | PRE TA- | *Non-evaginated* cysts cultured for 6h in RPMI *-TA* |
+| **PRE_AT** | PRE TA+ | *Non-evaginated* cysts cultured for 6h in RPMI *+TA* |
+| **EV_SAT** | EV TA- | *Recently evaginated* individuals (12-24h) in RPMI *-TA* |
+| **EV_AT** | EV TA+ | *Recently evaginated* individuals (12-24h) in RPMI *+TA* |
+| **POST_SAT** | POST TA- | *Evaginated* individuals cultured for 120h in RPMI *-TA* |
+| **POST_AT** | POST TA+ | *Evaginated* individuals cultured for 120h in RPMI *+TA* |
 
 ---
 
